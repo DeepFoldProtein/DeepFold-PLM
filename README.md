@@ -2,7 +2,7 @@
 ## 🖥️ Website
 Explore now: https://deepfold.org
 
-## PlmMSA
+## plmMSA
 
 See [plmMSA/README.md](plmMSA/README.md) for more information.
 
