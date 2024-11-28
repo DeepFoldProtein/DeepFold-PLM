@@ -1,0 +1,13 @@
+setuptools
+fastapi
+uvicorn
+requests
+torch
+transformers
+tqdm
+biopython
+aiofiles
+numba
+numpy
+pandas
+faiss-cpu
