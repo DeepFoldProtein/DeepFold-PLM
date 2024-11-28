@@ -4,7 +4,7 @@ Explore now: https://deepfold.org
 
 ## PlmMSA
 
-See [PlmMSA/README.md](PlmMSA/README.md) for more information.
+See [plmMSA/README.md](plmMSA/README.md) for more information.
 
 ## DeepFold pytorch
 
