@@ -81,4 +81,4 @@ python run_full_pipeline.py --query_fasta example_fastas/example_query.fasta --n
 
 ## Acknowledgements
 
-vdbplmalign is based on the [PLMAlign](https://github.com/maovshao/PLMAlign) repository. Thanks to the authors for their contributions.
+plmMSA is based on the [PLMAlign](https://github.com/maovshao/PLMAlign) repository. Thanks to the authors for their contributions.
