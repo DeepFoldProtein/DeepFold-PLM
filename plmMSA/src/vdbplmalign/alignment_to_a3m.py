@@ -62,7 +62,7 @@ def filter_and_print_alignments(heads, scores, A3M, a3m_path, cutoff=None, ratio
         for k in order:
             head = heads[k]
             score = scores[k]
-            if float(score) < cutoff and float(score) < 8.0:
+            if float(score) < cutoff:
                 continue
             f.write(f">{head} {score:8.3f}\n")
             f.write(A3M[head] + "\n")
