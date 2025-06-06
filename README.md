@@ -1,58 +1,101 @@
-# DeepFold-PLM: Accelerating Protein Structure Prediction via Efficient Homology Search Using Protein Language Models
+<div align="center">
 
-[![Status](https://img.shields.io/badge/Status-Submitted-orange.svg)](https://github.com/your-repo/DeepFold-PLM)
-[![Website](https://img.shields.io/badge/Website-Live-brightgreen.svg)](https://df-plm.deepfold.org/)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+# 🧬 DeepFold-PLM
+### *Accelerating Protein Structure Prediction via Efficient Homology Search Using Protein Language Models*
 
-## 🧬 Overview
+[![Status](https://img.shields.io/badge/Status-Submitted-orange.svg?style=for-the-badge)](https://github.com/your-repo/DeepFold-PLM)
+[![Website](https://img.shields.io/badge/Website-Live-brightgreen.svg?style=for-the-badge)](https://df-plm.deepfold.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg?style=for-the-badge&logo=python)](https://python.org)
+[![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg?style=for-the-badge&logo=pytorch)](https://pytorch.org)
 
-DeepFold-PLM revolutionizes protein structure prediction by integrating advanced protein language models with vector embedding databases to achieve ultra-fast MSA construction and enhanced structure prediction capabilities.
+</div>
 
-### Key Features
+---
 
-- **⚡ 47x Faster MSA Generation**: Dramatically accelerated multiple sequence alignment construction
-- **🎯 Accurate Predictions**: Maintains prediction accuracy comparable to AlphaFold
-- **🔗 Multimeric Complexes**: Extended modeling capabilities for protein complexes
-- **🚀 Scalable Implementation**: PyTorch-based framework for large-scale predictions
-- **🌐 User-Friendly Interface**: Real-time analysis through web service
-- **📈 Enhanced Diversity**: Increased sequence diversity for better coevolutionary information
+## 🌟 Overview
 
-## 🖥️ Website
+> **DeepFold-PLM** accelerates protein structure prediction by integrating advanced protein language models with vector embedding databases to achieve **ultra-fast MSA construction** and enhanced structure prediction capabilities.
 
-Explore now: [https://df-plm.deepfold.org/](https://df-plm.deepfold.org/)
+<div align="center">
 
-## 📝 Abstract
+| 🚀 **Performance** | 🎯 **Accuracy** | 🔧 **Implementation** |
+|:------------------:|:---------------:|:--------------------:|
+| **47x Faster** MSA Generation | **AlphaFold-level** Predictions | **PyTorch-based** Framework |
 
-Protein structure prediction has been revolutionized and generalized with the advent of cutting-edge AI methods such as AlphaFold, but reliance on computationally intensive multiple sequence alignments (MSA) remains a major limitation. We introduce DeepFold-PLM, a novel framework that integrates advanced protein language models with vector embedding databases to enhance ultra-fast MSA construction, remote homology detection, and protein structure prediction.
+</div>
 
-DeepFold-PLM utilizes high-dimensional embeddings and contrastive learning, significantly accelerate MSA generation, achieving 47 times faster than standard methods, while maintaining prediction accuracy comparable to AlphaFold. In addition, it enhances structure prediction by extending modeling capabilities to multimeric protein complexes, provides a scalable PyTorch-based implementation for efficient large-scale prediction, and offers a user-friendly web service for real-time analysis.
+### ✨ Key Highlights
 
-Our method also effectively increases sequence diversity, enriching coevolutionary information critical for accurate structure prediction. DeepFold-PLM thus represents a versatile and practical resource that enables high-throughput applications in computational structural biology.
+<table>
+<tr>
+<td width="50%">
 
-## 👥 Authors
+**🚀 Performance**
+- ⚡ **47x faster** MSA generation
+- 📈 Enhanced sequence diversity
+- 🔍 Superior remote homology detection
 
-**Minsoo Kim**¹* • **Hanjin Bae**¹* • **Gyeongpil Jo**¹ • **Kunwoo Kim**¹ • **Sung Jong Lee**² • **Jejoong Yoo**¹† • **Keehyoung Joo**³†
+</td>
+<td width="50%">
 
-¹ *Department of Physics, Sungkyunkwan University, Suwon, Korea*  
-² *Basic Science Research Institute, Changwon National University, Changwon 51140, Korea*  
-³ *Center for Advanced Computation, Korea Institute for Advanced Study, Seoul, Korea*
+**🎯 Capabilities**
+- 🧬 Single & multimeric protein complexes
+- 🌐 Real-time web service analysis
+- ⚙️ Scalable large-scale predictions
 
-*\* These authors contributed equally to this work*  
-*† Corresponding authors: jejoong@skku.edu, newton@kias.re.kr*
+</td>
+</tr>
+</table>
 
-## 🚀 Quick Start
+---
 
-### plmMSA
+## 🌐 Try DeepFold-PLM
 
-See [plmMSA/README.md](plmMSA/README.md) for more information.
+<div align="center">
 
-### DeepFold PyTorch
+### 🖥️ **Interactive Web Interface**
 
-See [DeepFold/README.md](https://github.com/DeepFoldProtein/DeepFold/blob/main/README.md) for more information.
+**Experience the power of DeepFold-PLM instantly**
 
-## 📚 Citation
+[![Website](https://img.shields.io/badge/🚀_Launch_Web_App-df--plm.deepfold.org-4285f4?style=for-the-badge&logoColor=white)](https://df-plm.deepfold.org/)
 
-If you use DeepFold-PLM in your research, please cite our paper:
+*Real-time protein structure prediction • No installation required • User-friendly interface*
+
+</div>
+
+---
+
+## 🚀 Getting Started
+
+<details>
+<summary><b>📦 plmMSA Module</b></summary>
+
+Fast multiple sequence alignment generation using protein language models.
+
+**Documentation:** [plmMSA/README.md](plmMSA/README.md)
+
+
+</details>
+
+<details>
+<summary><b>🧠 DeepFold PyTorch Implementation</b></summary>
+
+Complete PyTorch-based protein structure prediction framework.
+
+**Documentation:** [DeepFold/README.md](https://github.com/DeepFoldProtein/DeepFold/blob/main/README.md)
+
+
+</details>
+
+---
+
+## 📖 Citation
+
+If you find DeepFold-PLM useful in your research, please cite our work:
+
+<details>
+<summary><b>📋 BibTeX Citation</b></summary>
 
 ```bibtex
 @article{kim2025deepfold,
@@ -64,17 +107,17 @@ If you use DeepFold-PLM in your research, please cite our paper:
 }
 ```
 
+</details>
+
+---
+
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+<div align="center">
 
-## 🤝 Contributing
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-We welcome contributions! Please feel free to submit a Pull Request.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-## 📞 Contact
-
-For questions and support, please contact:
-- Jejoong Yoo: jejoong@skku.edu
-- Keehyoung Joo: newton@kias.re.kr
-
+---
+</div>
