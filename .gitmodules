@@ -1,3 +1,0 @@
-[submodule "deepfold"]
-	path = deepfold
-	url = git@github.com:iitp-ppi/DeepFoldPublic.git
