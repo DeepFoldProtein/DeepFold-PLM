@@ -8,6 +8,13 @@
 
 DeepFold-PLM accelerates protein structure prediction by integrating advanced protein language models with vector embedding databases to achieve ultra-fast MSA construction and enhanced structure prediction capabilities.
 
+![Architecture of DeepFold-PLM pipeline](images/main.png)
+
+**Architecture of DeepFold-PLM pipeline.**
+**(a)** The plmMSA module constructs MSA using PLM-based alignment. Protein sequences are transformed into dense vector representations through pre-trained PLMs, enabling rapid retrieval of homologous sequences. PLMAlign then constructs MSAs using vector database embeddings, precomputed ProtT5 embeddings, and query sequence embeddings.
+**(b)** The monomer structure prediction module integrates plmMSA-derived homologous structures and MSA-derived constraints to predict 3D protein structures.
+**(c)** The complex structure prediction module extends the approach to multimeric protein through template search and coevolutionary analysis.
+
 ### Key Features
 
 - **⚡ 47x Faster MSA Generation**: Dramatically accelerated multiple sequence alignment construction
