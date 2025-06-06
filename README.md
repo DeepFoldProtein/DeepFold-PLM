@@ -32,11 +32,11 @@ Explore now: [https://df-plm.deepfold.org/](https://df-plm.deepfold.org/)
 
 ### plmMSA
 
-See [plmMSA/README.md](plmMSA/README.md) for more information.
+See [plmMSA](plmMSA) for more information.
 
 ### DeepFold PyTorch
 
-See [DeepFold/README.md](https://github.com/DeepFoldProtein/DeepFold/blob/main/README.md) for more information.
+See [DeepFold](https://github.com/DeepFoldProtein/DeepFold/blob/main) for more information.
 
 ## 📚 Citation
 
