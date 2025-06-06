@@ -1,3 +1,4 @@
 [submodule "DeepFold"]
 	path = DeepFold
 	url = https://github.com/DeepFoldProtein/DeepFold
+	branch = main

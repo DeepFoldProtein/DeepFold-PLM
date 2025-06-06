@@ -6,7 +6,7 @@
 
 ## 🧬 Overview
 
-DeepFold-PLM revolutionizes protein structure prediction by integrating advanced protein language models with vector embedding databases to achieve ultra-fast MSA construction and enhanced structure prediction capabilities.
+DeepFold-PLM accelerates protein structure prediction by integrating advanced protein language models with vector embedding databases to achieve ultra-fast MSA construction and enhanced structure prediction capabilities.
 
 ### Key Features
 
