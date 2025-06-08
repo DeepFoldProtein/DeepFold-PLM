@@ -120,4 +120,3 @@ python scripts/faiss_api.py
 ### Test Faiss API
 
 Test the Faiss API to ensure it's working correctly: ✅
-```
