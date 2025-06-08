@@ -14,13 +14,12 @@ DeepFold-PLM accelerates protein structure prediction by integrating advanced pr
 ### Key Features
 
 - **⚡ 47x Faster MSA Generation**: Dramatically accelerated multiple sequence alignment construction
-- **🎯 Accurate Predictions**: Maintains prediction accuracy comparable to AlphaFold
-- **🔗 Multimeric Complexes**: Extended modeling capabilities for protein complexes
-- **🚀 Scalable Implementation**: PyTorch-based framework for large-scale predictions
+- **📈 Enhanced Diversity**: Increased sequence diversity for better coevolutionary information
+- **🚀 Superior Performance**: Outperforms AlphaFold's JAX implementation for sequences longer than 3,000 residues
+- **⚡ Optimized Attention**: 6x faster than PyTorch baseline with custom CUDA kernels
+- **🔧 Multi-GPU Scaling**: Linear performance scaling across 1-4 NVIDIA A100 GPUs
 - **🌐 User-Friendly Interface**: Real-time analysis through web service
 - **🔌 API Access**: plmMSA API access with automatic pairing capabilities
-- **⏱️ Ultra-Fast Search**: MSA search completion within seconds (when queue is not busy)
-- **📈 Enhanced Diversity**: Increased sequence diversity for better coevolutionary information
 
 ## 🖥️ Website
 
@@ -70,6 +69,17 @@ curl -X GET 'https://df-plm.deepfold.org/api/plmmsa/v1/job/YOUR_JOB_ID'
 See [plmMSA](plmMSA) for more information.
 
 ### DeepFold PyTorch
+
+<div align="center">
+  <img src="images/perf.png" alt="Performance Comparison" width="800"/>
+</div>
+
+🚀 Our optimized PyTorch implementation achieves **significant speedups** through:
+- ⚡️ Multi-GPU parallelization 
+- 🔧 Custom CUDA kernels
+- 💪 High-throughput processing
+
+Enabling large-scale structural biology research and production deployments.
 
 See [DeepFold](https://github.com/DeepFoldProtein/DeepFold/blob/main) for more information.
 
