@@ -1,6 +1,67 @@
 # plmMSA
 
-## Install Packages
+## Recommended: API Access 🚀
+
+The easiest way to use plmMSA is through our web API. This allows you to generate MSAs without setting up the entire pipeline locally. Our API is compatible with mmseqs2 format and methodologies, providing seamless integration with existing mmseqs2 workflows and supporting standard protein sequence formats.
+
+### Submit MSA Job
+
+Submit a job to generate MSAs for your protein sequences:
+
+```bash
+curl -X POST 'https://df-plm.deepfold.org/api/plmmsa/v1/submit' \
+-H 'Content-Type: application/json' \
+-d '{
+    "mode": "unpaired+paired", 
+    "sequences": [
+        "MAHHHHHHVAVDAVSFTLLQDQLQSVLDTLSEREAGVVRLRFGLTDGQPRTLDEIGQVYGVTRERIRQIESKTMSKLRHPSRSQVLRDYLDGSSGSGTPEERLLRAIFGEKA",
+        "MRYAFAAEATTCNAFWRNVDMTVTALYEVPLGVCTQDPDRWTTTPDDEAKTLCRACPRRWLCARDAVESAGAEGLWAGVVIPESGRARAFALGQLRSLAERNGYPVRDHRVSAQSA"
+    ]
+}'
+```
+
+### Check Job Status
+
+Check the status of your submitted job using the job ID returned from the submission:
+
+```bash
+curl -X GET 'https://df-plm.deepfold.org/api/plmmsa/v1/job/YOUR_JOB_ID'
+```
+
+### MSA Generation Modes
+
+The API supports three different modes for MSA generation:
+
+- **`unpaired`**: Generates MSAs for each sequence independently. Creates separate MSAs for each input sequence and combines them.
+
+- **`paired`**: Designed for multiple related sequences (e.g., different chains of a protein complex). Attempts to find paired homologs for all input sequences together to maintain relationships between sequences.
+
+- **`unpaired+paired`**: Combines both approaches. First attempts to generate a paired MSA, then supplements with unpaired MSAs if the maximum number of sequences isn't reached. Provides the most comprehensive MSA by leveraging both paired and unpaired approaches.
+
+## Integration with Structure Prediction Tools 🧬
+
+plmMSA outputs are compatible with popular structure prediction tools for enhanced folding accuracy.
+
+**Easy Integration with ColabFold:**
+```python
+results = run(
+    queries=queries,
+    result_dir=result_dir,
+    use_templates=use_templates,
+    ...  # other parameters
+    host_url="https://df-plm.deepfold.org/api/plmmsa"
+)
+```
+
+**Easy Integration with Boltz:**
+```bash
+boltz predict protein.yaml --use_msa_server --msa_server_url "https://df-plm.deepfold.org/api/plmmsa"
+```
+
+
+## Manual Setup: Example Procedure for building plmMSA
+
+### Install Packages
 
 ```bash
 pip install -r requirements.txt
@@ -9,7 +70,7 @@ pip install -r requirements.txt
 pip install -e .
 ```
 
-## Ankh Contrastive
+### Ankh Contrastive
 
 Available on: https://huggingface.co/DeepFoldProtein/Ankh-Large-Contrastive
 
@@ -20,8 +81,6 @@ model = AnkhCL.from_pretrained(
 )
 tokenizer = AutoTokenizer.from_pretrained("DeepFoldProtein/Ankh-Large-Contrastive")
 ```
-
-## Example Procedure for building plmMSA
 
 ### ESM-1b Embedding Generation
 
@@ -61,24 +120,4 @@ python scripts/faiss_api.py
 ### Test Faiss API
 
 Test the Faiss API to ensure it's working correctly: ✅
-```bash
-python scripts/test_query.py
 ```
-
-### Cached Embeddings for vdbplmalign (without pooling)
-
-Generate cached embeddings using the ProtT5 model: 🗃️
-```bash
-python scripts/gen_prott5_embeddings.py -i example_fastas/example.fasta -o example_embedding_path/prott5 -b 1 -d cuda
-```
-
-### Run Full Pipeline
-
-Run the full pipeline with the specified query FASTA file: 🔄
-```bash
-python run_full_pipeline.py --query_fasta example_fastas/example_query.fasta --nprobe 1 --limit 3
-```
-
-## Acknowledgements
-
-vdbplmalign is based on the [PLMAlign](https://github.com/maovshao/PLMAlign) repository. Thanks to the authors for their contributions.
