@@ -23,7 +23,8 @@ DeepFold-PLM accelerates protein structure prediction by integrating advanced pr
 
 ## 🖥️ Website
 
-Explore now: [https://df-plm.deepfold.org/](https://df-plm.deepfold.org/)
+Explore now: **[https://df-plm.deepfold.org/](https://df-plm.deepfold.org/)**
+
 
 ## 🚀 Quick Start
 
