@@ -92,7 +92,10 @@ If you use DeepFold-PLM in your research, please cite our paper:
 @article{kim2025deepfold,
   title={DeepFold-PLM: Accelerating Protein Structure Prediction via Efficient Homology Search Using Protein Language Models},
   author={Kim, Minsoo and Bae, Hanjin and Jo, Gyeongpil and Kim, Kunwoo and Lee, Sung Jong and Yoo, Jejoong and Joo, Keehyoung},
-  journal={Submitted},
+  journal={Bioinformatics},
+  volume={41},
+  issue={11},
+  doi={https://doi.org/10.1093/bioinformatics/btaf579},
   year={2025},
   url={https://df-plm.deepfold.org/}
 }
