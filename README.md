@@ -97,6 +97,8 @@ If you use DeepFold-PLM in your research, please cite our paper:
   issue={11},
   doi={https://doi.org/10.1093/bioinformatics/btaf579},
   year={2025},
+  publisher={Oxford University Press (OUP)},
+  pages={1--13},
   url={https://df-plm.deepfold.org/}
 }
 ```
