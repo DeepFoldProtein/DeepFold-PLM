@@ -1,6 +1,6 @@
 # plmMSA
 
-## Recommended: API Access 🚀
+## API Access 🚀 (Experimental)
 
 The easiest way to use plmMSA is through our web API. This allows you to generate MSAs without setting up the entire pipeline locally. Our API is compatible with mmseqs2 format and methodologies, providing seamless integration with existing mmseqs2 workflows and supporting standard protein sequence formats.
 
