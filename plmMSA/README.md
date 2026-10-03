@@ -2,41 +2,46 @@
 
 ## API Access 🚀 (Experimental)
 
-The easiest way to use plmMSA is through our web API. This allows you to generate MSAs without setting up the entire pipeline locally. Our API is compatible with mmseqs2 format and methodologies, providing seamless integration with existing mmseqs2 workflows and supporting standard protein sequence formats.
+The easiest way to use plmMSA is through our hosted web API. This allows you to generate MSAs without setting up the entire pipeline locally. The API also exposes ColabFold/MMseqs2-compatible endpoints, providing seamless integration with existing MMseqs2 workflows and supporting standard protein sequence formats.
+
+The full, interactive API reference (Swagger UI) is available at **[https://plmmsa.deepfold.org/docs](https://plmmsa.deepfold.org/docs)**.
 
 ### Submit MSA Job
 
-Submit a job to generate MSAs for your protein sequences:
+Submit a job to generate MSAs for your protein sequences. The endpoint returns `202 Accepted` with a `job_id`:
 
 ```bash
-curl -X POST 'https://df-plm.deepfold.org/api/plmmsa/v1/submit' \
+curl -X POST 'https://plmmsa.deepfold.org/v2/msa' \
 -H 'Content-Type: application/json' \
 -d '{
-    "mode": "unpaired+paired", 
     "sequences": [
         "MAHHHHHHVAVDAVSFTLLQDQLQSVLDTLSEREAGVVRLRFGLTDGQPRTLDEIGQVYGVTRERIRQIESKTMSKLRHPSRSQVLRDYLDGSSGSGTPEERLLRAIFGEKA",
         "MRYAFAAEATTCNAFWRNVDMTVTALYEVPLGVCTQDPDRWTTTPDDEAKTLCRACPRRWLCARDAVESAGAEGLWAGVVIPESGRARAFALGQLRSLAERNGYPVRDHRVSAQSA"
-    ]
+    ],
+    "paired": true,
+    "output_format": "a3m"
 }'
 ```
 
 ### Check Job Status
 
-Check the status of your submitted job using the job ID returned from the submission:
+Check the status of your submitted job (and retrieve results once complete) using the `job_id` returned from the submission:
 
 ```bash
-curl -X GET 'https://df-plm.deepfold.org/api/plmmsa/v1/job/YOUR_JOB_ID'
+curl -X GET 'https://plmmsa.deepfold.org/v2/msa/YOUR_JOB_ID'
 ```
 
-### MSA Generation Modes
+### Key Request Parameters
 
-The API supports three different modes for MSA generation:
+`POST /v2/msa` accepts the following main fields (see the Swagger UI for the full schema):
 
-- **`unpaired`**: Generates MSAs for each sequence independently. Creates separate MSAs for each input sequence and combines them.
+- **`sequences`** (required): One string per chain. Provide multiple sequences for a protein complex.
+- **`paired`** (default `false`): When `true`, produces a paired MSA across chains (in addition to per-chain unpaired MSAs), preserving the pairing relationships between chains of a complex.
+- **`output_format`** (default `"a3m"`): Wire format for the returned MSA.
+- **`models`**: One or more PLM backend IDs to run (available: `ankh_cl`, `ankh_large`, `esm1b`, `prott5`).
+- **`mode`**: Alignment mode — `local`, `global`, or `glocal`/`q2t`/`t2q` (OTalign-only).
 
-- **`paired`**: Designed for multiple related sequences (e.g., different chains of a protein complex). Attempts to find paired homologs for all input sequences together to maintain relationships between sequences.
-
-- **`unpaired+paired`**: Combines both approaches. First attempts to generate a paired MSA, then supplements with unpaired MSAs if the maximum number of sequences isn't reached. Provides the most comprehensive MSA by leveraging both paired and unpaired approaches.
+> **Note:** The legacy `v1` API (`/api/plmmsa/v1/...`) has been retired. Use the `v2` endpoints shown above.
 
 ## Integration with Structure Prediction Tools 🧬
 
@@ -49,13 +54,13 @@ results = run(
     result_dir=result_dir,
     use_templates=use_templates,
     ...  # other parameters
-    host_url="https://df-plm.deepfold.org/api/plmmsa"
+    host_url="https://plmmsa.deepfold.org/v2/colabfold/plmmsa"
 )
 ```
 
 **Easy Integration with Boltz:**
 ```bash
-boltz predict protein.yaml --use_msa_server --msa_server_url "https://df-plm.deepfold.org/api/plmmsa"
+boltz predict protein.yaml --use_msa_server --msa_server_url "https://plmmsa.deepfold.org/v2/colabfold/plmmsa"
 ```
 
 
